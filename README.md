@@ -1,3 +1,4 @@
+> **Based on `java-jwt 4.4.0` with `Kalkancrypt JCE-provider` support (GG2004, GG2015)**
 > **Note**
 > As part of our ongoing commitment to best security practices, we have rotated the signing keys used to sign previous releases of this SDK. As a result, new patch builds have been released using the new signing key. Please upgrade at your earliest convenience.
 >
@@ -38,6 +39,8 @@ This library is supported for Java LTS versions 8, 11, and 17. For issues on non
 | ES256 | ECDSA256 | ECDSA with curve P-256 and SHA-256 |
 | ES384 | ECDSA384 | ECDSA with curve P-384 and SHA-384 |
 | ES512 | ECDSA512 | ECDSA with curve P-521 and SHA-512 |
+| GG2004| ECGOST34310-2004 | ECGOST34310-2004 with ECGOST34311-95
+| GG2015| ECGOST3410-2015-512 | ECGOST3410-2015 with ECGOST3411-2015
 
 > Note - Support for ECDSA with curve secp256k1 and SHA-256 (ES256K) has been dropped since it has been [disabled in Java 15](https://www.oracle.com/java/technologies/javase/15-relnote-issues.html#JDK-8237219)
 

@@ -73,6 +73,7 @@ javadoc {
 
 dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.2'
+    implementation 'kz.gov.pki.kalkan:knca_provider_jce_kalkan:0.7.5'
 
     testImplementation 'org.bouncycastle:bcprov-jdk15on:1.70'
     testImplementation 'junit:junit:4.13.2'

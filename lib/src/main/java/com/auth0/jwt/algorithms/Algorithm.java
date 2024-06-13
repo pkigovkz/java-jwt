@@ -308,6 +308,79 @@ public abstract class Algorithm {
         return ECDSA512(publicKey, privateKey);
     }
 
+        /**
+     * Creates a new Algorithm instance using GOST34310-2004. Tokens specify this as "GG2004".
+     *
+     * @param keyProvider the provider of the Public Key and Private Key for the verify and signing instance.
+     * * @return a valid GOST34310-2004 Algorithm.
+     * @throws IllegalArgumentException if the Key Provider is null.
+     */
+    public static Algorithm GG2004(ECDSAKeyProvider keyProvider) throws IllegalArgumentException {
+        return new EcGost34310Algorithm("GG2004", "ECGOST34310", keyProvider);
+    }
+
+    /**
+     * Creates a new Algorithm instance using GOST34310-2004. Tokens specify this as "GG2004".
+     * 
+     * @param publicKey  the key to use in the verify instance.
+     * @param privateKey the key to use in the signing instance.
+     * 
+     * @return a valid GOST34310-2004 Algorithm.
+     * @throws IllegalArgumentException if the provided Key is null.
+     */
+    public static Algorithm GG2004(ECPublicKey publicKey, ECPrivateKey privateKey) throws IllegalArgumentException {
+        return GG2004(EcGost34310Algorithm.providerForKeys(publicKey, privateKey));
+    }
+
+    /**
+     * Creates a new Algorithm instance using GOST34310-2004. Tokens specify this as "GG2004".
+     *
+     * @param key the key to use in the verify or signing instance.
+     * @return a valid GOST34310-2004 Algorithm.
+     * @throws IllegalArgumentException if the provided Key is null.
+     */
+    public static Algorithm GG2004(ECKey key) throws IllegalArgumentException {
+        ECPublicKey publicKey = key instanceof ECPublicKey ? (ECPublicKey) key : null;
+        ECPrivateKey privateKey = key instanceof ECPrivateKey ? (ECPrivateKey) key : null;
+        return GG2004(publicKey, privateKey);
+    }
+
+    /**
+     * Creates a new Algorithm instance using GOST3410-2015-512. Tokens specify this as "GG2015".
+     *
+     * @param keyProvider the provider of the Public Key and Private Key for the verify and signing instance.
+     * * @return a valid ECGOST3410-2015 Algorithm.
+     * @throws IllegalArgumentException if the Key Provider is null.
+     */
+    public static Algorithm GG2015(ECDSAKeyProvider keyProvider) throws IllegalArgumentException {
+        return new EcGost34310Algorithm("GG2015", "ECGOST3410-2015", keyProvider);
+    }
+
+    /**
+     * Creates a new Algorithm instance using GOST3410-2015-512. Tokens specify this as "GG2015".
+     * 
+     * @param publicKey  the key to use in the verify instance.
+     * @param privateKey the key to use in the signing instance.
+     * 
+     * @return a valid ECGOST3410-2015 Algorithm.
+     * @throws IllegalArgumentException if the provided Key is null.
+     */
+    public static Algorithm GG2015(ECPublicKey publicKey, ECPrivateKey privateKey) throws IllegalArgumentException {
+        return GG2015(EcGost34310Algorithm.providerForKeys(publicKey, privateKey));
+    }
+
+    /**
+     * Creates a new Algorithm instance using GOST3410-2015-512. Tokens specify this as "GG2015".
+     *
+     * @param key the key to use in the verify or signing instance.
+     * @return a valid ECGOST3410-2015 Algorithm.
+     * @throws IllegalArgumentException if the provided Key is null.
+     */
+    public static Algorithm GG2015(ECKey key) throws IllegalArgumentException {
+        ECPublicKey publicKey = key instanceof ECPublicKey ? (ECPublicKey) key : null;
+        ECPrivateKey privateKey = key instanceof ECPrivateKey ? (ECPrivateKey) key : null;
+        return GG2015(publicKey, privateKey);
+    }
 
     public static Algorithm none() {
         return new NoneAlgorithm();
